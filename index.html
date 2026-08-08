@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nama Kamu — Web Developer & CTF Player</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div class="bg-ambient" aria-hidden="true"><span class="blob-1"></span><span class="blob-2"></span></div>
+
+<header>
+  <nav>
+    <a href="#" class="logo">G1xky<span>@</span>portfolio<span>:~$</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">My Project</a>
+      <a href="#writeups">My Writeup</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Contact Me</a>
+    <a onclick="sendFlag()" class="nav-cta flag">Submit Flag🚩</a>
+    <button class="nav-toggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow rise d1">// Temporary portfolio on github :v</div>
+      <h1 class="rise d2">Write Code,<br>Revealing Vulnerability <span class="hl">Create solutions.</span>.</h1>
+      <p class="lead rise d3">
+        Hi, I'm <strong>Nabil Gisky Andara</strong> a web developer who also actively plays Capture the Flag. By day I write production code, by night I find loopholes.
+      </p>
+      <div class="hero-actions rise d4">
+        <a href="#projects" class="btn btn-primary">See my Projects</a>
+        <a href="#writeups" class="btn btn-ghost">Read My Writeup CTF</a>
+      </div>
+      <div class="stat-row rise d5">
+        <div class="stat"><b data-count="5" data-suffix="+">0</b><span>Projects Finished</span></div>
+        <div class="stat"><b data-count="3">0</b><span>play at CTF</span></div>
+        <div class="stat"><b>Top ?</b><span>Best Rating</span></div>
+      </div>
+    </div>
+
+    <div class="terminal rise d6">
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">G1xky@portfolio: ~</span>
+      </div>
+      <div class="terminal-body">
+        <div class="line"><span class="prompt-sym">$</span> whoami</div>
+        <div class="line out">Nama Kamu — Web Developer & CTF Player</div>
+        <div class="line"><span class="prompt-sym">$</span> cat skills.txt</div>
+        <div class="line out">JavaScript · React · Node.js · Burp Suite · Linux</div>
+        <div class="line"><span class="prompt-sym">$</span> ./capture_the_flag --run</div>
+        <div class="line out">flag{<span id="typed-out" class="flag"></span>}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="reveal">
+      <div class="prompt-label">cd ./about-me <span class="cursor-blink"></span></div>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>
+          I'm a web developer interested in building fast, secure, and easy-to-develop applications. For me, writing code isn't just about getting features working, but also about ensuring every part is well-designed.
+        </p>
+        <p>
+          My interest in cybersecurity stems from curiosity. When building a system, I also want to understand how it can be attacked so I can design more robust solutions. Through personal projects and Capture the Flag, I continue to hone my thinking as a developer and security enthusiast.
+        </p>
+      </div>
+      <div>
+        <div class="stack-group">
+          <h4>Frontend & Backend</h4>
+          <div class="tag-row">
+            <span class="tag">JavaScript / TypeScript</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Security & CTF Tooling</h4>
+          <div class="tag-row">
+            <span class="tag">Burp Suite</span>
+            <span class="tag">SqlMap (For Sql Injections)</span>
+            <span class="tag">Wireshark</span>
+            <span class="tag">Python</span>
+            <span class="tag">Linux / Bash</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="reveal">
+      <div class="prompt-label">cd ./projects <span class="cursor-blink"></span></div>
+      <h2 class="section-title">My Projects</h2>
+    </div>
+    <div class="card-grid stagger-group">
+      <div class="card stagger-item">
+        <h3>School Portfolio Web Assignment</h3>
+        <p>Short Project Description: This project was created to complete my grades/assignments at school</p>
+        <div class="tag-row">
+          <span class="tag">ChatGPT :></span><span class="tag">Web Static</span>
+        </div>
+        <div class="links"><a target="_blank" href="https://nabil770.github.io/WB/index.html">Live Demo →</a><a target="_blank" href="https://github.com/nabil770/WB">Source Code →</a></div>
+      </div>
+      <div class="card stagger-item">
+        <h3>School Portfolio Web 2</h3>
+        <p>Short Project Description: This is my idle project, which I work on from noon to evening, lol :></p>
+        <div class="tag-row">
+          <span class="tag">Web Static</span>
+        </div>
+        <div class="links"><a target="_blank" href="https://nbaaaaaaaaa.github.io/Web-Portofolio1/">Live Demo →</a><a target="_blank" href="https://github.com/Nbaaaaaaaaa/Web-Portofolio1">Source Code →</a></div>
+      </div>
+      <div class="card stagger-item">
+        <h3>Yamaha Motor Workshop Web May 2</h3>
+        <p>Short Project Description: This is a dynamic website based on a MySQL database to manage things like workshop equipment and others, I was paid to make this.</p>
+        <div class="tag-row">
+          <span class="tag">MySQL</span><span class="tag">Web Dynamic</span><span class="tag">Tailwind CSS</span>
+        </div>
+        <div class="links"><a href="javascript:alert('Sorry, but this website is for local !')">Live Demo →</a><a href="javascript:alert('Sorry, but this website is for local !')">Source Code →</a></div>
+      </div>
+      <div class="card stagger-item">
+        <h3>Dynamic Website to manage Steam Motor</h3>
+        <p>Short Project Description: It's the same as the one on the left, only this time the client asked for more :></p>
+        <div class="tag-row">
+          <span class="tag">MySQL</span><span class="tag">Web Dynamic</span>
+        </div>
+        <div class="links"><a href="javascript:alert('Sorry, but this website is for local !')">Live Demo →</a><a href="javascript:alert('Sorry, but this website is for local !')">Kode Sumber →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTF WRITEUPS -->
+  <section id="writeups">
+    <div class="reveal">
+      <div class="prompt-label">cd ./achievements <span class="cursor-blink"></span></div>
+      <h2 class="section-title">My Achievements</h2>
+    </div>
+    <div class="writeup-list stagger-group">
+      <div class="writeup stagger-item">
+        <span class="cat">CTF</span>
+        <div class="info"><h4>Juara 1 ITC-TI 2026</h4><span>Institut Informatika dan Bisnis Darmajaya</span></div>
+        <span class="ctf-name">30 Juli 2026</span>
+        <span class="diff">Provinsi</span>
+      </div>
+      <div class="writeup stagger-item">
+        <span class="cat">LCT</span>
+        <div class="info"><h4>Juara 1 NCC 2025</h4><span>Universitas Teknokrat Indonesia</span></div>
+        <span class="ctf-name">09 Agustus 2025</span>
+        <span class="diff">Nasional</span>
+      </div>
+      <div class="writeup stagger-item">
+        <span class="cat">OSN</span>
+        <div class="info"><h4>Juara 2 OSTAN 2025</h4><span>Sains Olimpiade Nasional</span></div>
+        <span class="ctf-name">08 Juli 2025</span>
+        <span class="diff">Nasional</span>
+      </div>
+      <div class="writeup stagger-item">
+        <span class="cat">LCT</span>
+        <div class="info"><h4>Juara 2 IT Competition 2024</h4><span>Universitas Lampung</span></div>
+        <span class="ctf-name">09 September 2024</span>
+        <span class="diff">Sumbagsel</span>
+      </div>
+      <div class="writeup stagger-item">
+        <span class="cat">Web</span>
+        <div class="info"><h4>Juara Harapan 3 ITC-TI 2024</h4><span>Institut Informatika dan Bisnis Darmajaya</span></div>
+        <span class="ctf-name">15 April 2024</span>
+        <span class="diff">Provinsi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Writeup Asli -->
+  <section id="writeups">
+    <div class="reveal">
+      <div class="prompt-label">cd ./my-writeups <span class="cursor-blink"></span></div>
+      <h2 class="section-title">My Writeups</h2>
+    </div>
+    <div class="writeup-list stagger-group">
+      <div class="writeup stagger-item">
+        <span class="cat">📂</span>
+        <div class="info"><h4>ITC-TI 2026</h4><span>Vuln : SSTI, Race Condition, Hash Cracked</span></div>
+        <span class="ctf-name"><a target="_blank" href="Writeup/ITC-TI 26.pdf">Read The File</a></span>
+        <span class="diff">Provinsi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="reveal">
+      <div class="prompt-label">cd ./kontak <span class="cursor-blink"></span></div>
+    </div>
+    <div class="contact-box reveal">
+      <h2>Mari terhubung.</h2>
+      <p>Terbuka untuk kolaborasi proyek, tim CTF, atau sekadar bertukar cerita soal keamanan siber.</p>
+      <div class="contact-links">
+        <a href="mailto:nabilgisky@gmail.com">Email</a>
+        <a href="https://github.com/Nbaaaaaaaaa">GitHub</a>
+        <a href="https://www.linkedin.com/in/nabil-gisky-a32592302/">LinkedIn</a>
+        <a target="_blank" href="Writeup/ITC-TI 26.docx">My Writeup</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  G1xky@portfolio:~$ echo "Dibuat dengan kode dan rasa penasaran, © 2026"
+</footer>
+
+    <div class="container">
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+  <div></div>
+</div>
+
+<!-- Hint : You Can Find in everywhere :v -->
+
+<script>
+  function _0x1dce(_0x381f04,_0xe67f76){_0x381f04=_0x381f04-(-0x1d*0x67+0x17d5*-0x1+0x24a1*0x1);const _0x19c175=_0x3cfd();let _0x4cca3d=_0x19c175[_0x381f04];return _0x4cca3d;}const _0x5d92b1=_0x1dce;(function(_0x192600,_0x51cdf2){const _0xea66d7=_0x1dce,_0x52b272=_0x192600();while(!![]){try{const _0x5dfb74=parseInt(_0xea66d7(0x129))/(0x1413+0xf5+-0x1507)*(-parseInt(_0xea66d7(0x13a))/(0x2*0x1183+-0x2474+0x170))+parseInt(_0xea66d7(0x130))/(0xbf*0x1c+-0xb8d+-0x954)*(-parseInt(_0xea66d7(0x133))/(-0xb5c+-0x1e*-0x1d+0x2*0x3fd))+parseInt(_0xea66d7(0x12a))/(-0x7*0x4e4+-0x1a05+0x3c46)*(parseInt(_0xea66d7(0x12c))/(0x1e8f*-0x1+-0x19c3+0x3858))+parseInt(_0xea66d7(0x134))/(-0x1d4d*0x1+-0x2*0x5ce+0xa*0x418)*(parseInt(_0xea66d7(0x124))/(0x7*0x2c+-0x2441*0x1+-0x2315*-0x1))+parseInt(_0xea66d7(0x136))/(-0x7e2*-0x2+0x15b*0xd+-0x215a)*(parseInt(_0xea66d7(0x128))/(-0x927*-0x4+0x25bb+-0x4a4d))+parseInt(_0xea66d7(0x123))/(0x572+-0xce1+0x77a)*(-parseInt(_0xea66d7(0x13b))/(-0xbd4+-0x15f4+0x21d4))+parseInt(_0xea66d7(0x12e))/(-0x23f7+0x216f+0x1*0x295);if(_0x5dfb74===_0x51cdf2)break;else _0x52b272['push'](_0x52b272['shift']());}catch(_0x57836f){_0x52b272['push'](_0x52b272['shift']());}}}(_0x3cfd,-0x332d+-0xa1f78+0x10bc72));function _0x3cfd(){const _0x22cf6a=['kMsvJ','9GLvYIf','flag{0HN0y','e\x20flag\x20!','62068BjEIjN','15883TrODbr','jbXbs','3436929vtlyuo','IRWcy','ShuWl','rbKLf','258918gbcPhO','12rFijFz','Wrong\x20!','LScuw','2738846aohlTn','568UArSAZ','ou\x20Find\x20th','OuFindM3}','Flag\x20:\x20','10mSgZEt','5vZHdBC','892690HHYvuZ','crGfP','6UfXGCS','Yeaapii,\x20Y','8340995QScqfl'];_0x3cfd=function(){return _0x22cf6a;};return _0x3cfd();}const flag=_0x5d92b1(0x131)+_0x5d92b1(0x126);function sendFlag(){const _0x27a45e=_0x5d92b1,_0x590916={'IRWcy':function(_0x5ada97,_0xe2c30e){return _0x5ada97(_0xe2c30e);},'kMsvJ':_0x27a45e(0x127),'rbKLf':function(_0x198814,_0x33a60a){return _0x198814==_0x33a60a;},'crGfP':function(_0x441bce,_0x10f0e6){return _0x441bce(_0x10f0e6);},'jbXbs':_0x27a45e(0x12d)+_0x27a45e(0x125)+_0x27a45e(0x132),'ShuWl':function(_0x4b07ac,_0x1ba62a){return _0x4b07ac(_0x1ba62a);},'LScuw':_0x27a45e(0x121)};text=_0x590916[_0x27a45e(0x137)](prompt,_0x590916[_0x27a45e(0x12f)]),_0x590916[_0x27a45e(0x139)](text,flag)?_0x590916[_0x27a45e(0x12b)](alert,_0x590916[_0x27a45e(0x135)]):_0x590916[_0x27a45e(0x138)](alert,_0x590916[_0x27a45e(0x122)]);}
+</script>
+
+<script>
+  const flagText = "th1s_1s_ju5t_a_templ4te";
+  const el = document.getElementById('typed-out');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(el){
+    if(reduceMotion){
+      el.textContent = flagText;
+    } else {
+      let i = 0;
+      const type = () => {
+        if(i <= flagText.length){
+          el.textContent = flagText.slice(0, i);
+          i++;
+          setTimeout(type, 65);
+        }
+      };
+      setTimeout(type, 900);
+    }
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(elm => io.observe(elm));
+
+  const staggerGroups = document.querySelectorAll('.stagger-group');
+  const staggerIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const items = entry.target.querySelectorAll('.stagger-item');
+        items.forEach((item, idx) => {
+          setTimeout(() => item.classList.add('in'), reduceMotion ? 0 : idx * 90);
+        });
+        staggerIo.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1});
+  staggerGroups.forEach(group => staggerIo.observe(group));
+
+  const counters = document.querySelectorAll('[data-count]');
+  let counted = false;
+  const countUp = () => {
+    if(counted) return;
+    counted = true;
+    counters.forEach(counter => {
+      const target = parseInt(counter.dataset.count, 10);
+      const suffix = counter.dataset.suffix || '';
+      if(reduceMotion){ counter.textContent = target + suffix; return; }
+      let current = 0;
+      const step = Math.max(1, Math.round(target / 40));
+      const tick = () => {
+        current = Math.min(current + step, target);
+        counter.textContent = current + suffix;
+        if(current < target) requestAnimationFrame(tick);
+      };
+      setTimeout(() => requestAnimationFrame(tick), 700);
+    });
+  };
+  setTimeout(countUp, 100);
+
+  const progressBar = document.getElementById('scroll-progress');
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if(progressBar) progressBar.style.width = pct + '%';
+
+    const headerEl = document.querySelector('header');
+    if(headerEl) headerEl.classList.toggle('scrolled', scrollTop > 10);
+  };
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  const sections = document.querySelectorAll('main section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+  const navIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const link = document.querySelector('.nav-links a[href="#' + id + '"]');
+      if(!link) return;
+      if(entry.isIntersecting){
+        navAnchors.forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-45% 0px -45% 0px'});
+  sections.forEach(sec => navIo.observe(sec));
+
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navCta = document.querySelector('.nav-cta');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const visible = navLinks.style.display === 'flex';
+      navLinks.style.display = visible ? 'none' : 'flex';
+      navCta.style.display = visible ? 'none' : 'inline-flex';
+      navLinks.style.cssText += 'flex-direction:column; position:absolute; top:64px; right:28px; background:var(--bg-elevated); border:1px solid var(--border); padding:20px; border-radius:8px;';
+    });
+  }
+</script>
+
+</body>
+</html>
