@@ -155,9 +155,8 @@
     <div class="card-grid stagger-group">
       <div class="card stagger-item">
         <h3>School Portfolio Web Assignment</h3>
-        <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-          <h1 style="color: azure; opacity: 0.5;">Coming Soon :v</h1>
-        </div>
+        <video src="review-project/video-project1.mp4" muted autoplay loop style="width: 100%;
+        height: 100%; filter: drop-shadow(0px 0px 3px yellow);"></video>
       </div>
       <div class="card stagger-item">
         <h3>School Portfolio Web 2</h3>
@@ -167,9 +166,8 @@
       </div>
       <div class="card stagger-item">
         <h3>Yamaha Motor Workshop Web May 2</h3>
-        <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-          <h1 style="color: azure; opacity: 0.5;">Coming Soon :v</h1>
-        </div>
+        <video src="review-project/video-project2.mp4" muted autoplay loop style="width: 100%;
+        height: 100%; filter: drop-shadow(0px 0px 3px yellow);"></video>
       </div>
       <div class="card stagger-item">
         <h3>Dynamic Website to manage Steam Motor</h3>
@@ -250,6 +248,14 @@
         <span class="diff">Nasional</span>
       </div>
     </div>
+    <div class="writeup-list stagger-group">
+      <div class="writeup stagger-item">
+        <span class="cat">On Going</span>
+        <div class="info"><h4>LappungCTF vol 3.0 2026</h4><span>Vuln : IDOR, XSS, etc  </span></div>
+        <span class="ctf-name"><a target="_blank" href="https://docs.google.com/document/d/15ZezGOS2WcqJ_7wOVNhI_pZkvqG5S23mGIMAmd-JkUc/edit?usp=sharing">Read The File</a></span>
+        <span class="diff">Sumbagsel</span>
+      </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
@@ -282,6 +288,20 @@
   <div></div>
 </div>
 
+<canvas id="cursor-particles"></canvas>
+
+<div id="hacker-cursor">
+    <div class="hc-ring"></div>
+    <div class="hc-cross-x"></div>
+    <div class="hc-cross-y"></div>
+    <div class="hc-center"></div>
+
+    <div class="hc-corner hc-tl"></div>
+    <div class="hc-corner hc-tr"></div>
+    <div class="hc-corner hc-bl"></div>
+    <div class="hc-corner hc-br"></div>
+</div>
+
 <!-- Hint : You Can Find in everywhere :v -->
 
 <script>
@@ -289,6 +309,142 @@
 </script>
 
 <script>
+  (() => {
+    const cursor = document.getElementById("hacker-cursor");
+    const canvas = document.getElementById("cursor-particles");
+
+    if (!cursor || !canvas) return;
+
+    const ctx = canvas.getContext("2d");
+
+    let mouseX = -100;
+    let mouseY = -100;
+
+    let cursorX = -100;
+    let cursorY = -100;
+
+    let particles = [];
+
+    const isTouchDevice =
+        window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+    if (isTouchDevice) return;
+
+    // Canvas setup
+    function resizeCanvas() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Mouse tracking
+    document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursor.classList.add("hc-active");
+        document.body.classList.add("hc-enabled");
+
+        // Spawn digital particles
+        for (let i = 0; i < 2; i++) {
+            particles.push({
+                x: mouseX,
+                y: mouseY,
+                size: Math.random() * 3 + 1,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2,
+                life: 1,
+                decay: Math.random() * 0.03 + 0.015
+            });
+        }
+
+        // Limit particle count
+        if (particles.length > 150) {
+            particles.splice(0, particles.length - 150);
+        }
+    });
+
+    // Smooth cursor animation
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.2;
+        cursorY += (mouseY - cursorY) * 0.2;
+
+        cursor.style.left = cursorX + "px";
+        cursor.style.top = cursorY + "px";
+
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+
+    // Hover detection
+    document.addEventListener("mouseover", (e) => {
+        const target = e.target.closest(
+            "a, button, input, textarea, select, [role='button']"
+        );
+
+        document.body.classList.toggle("hc-hover", !!target);
+    });
+
+    // Click animation
+    document.addEventListener("mousedown", () => {
+        document.body.classList.add("hc-click");
+    });
+
+    document.addEventListener("mouseup", () => {
+        document.body.classList.remove("hc-click");
+    });
+
+    // Hide cursor outside window
+    document.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hc-active");
+        document.body.classList.remove("hc-hover");
+    });
+
+    document.addEventListener("mouseenter", () => {
+        if (mouseX >= 0) {
+            cursor.classList.add("hc-active");
+        }
+    });
+
+    // Particle animation
+    function animateParticles() {
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+
+            p.x += p.vx;
+            p.y += p.vy;
+            p.life -= p.decay;
+
+            if (p.life <= 0) {
+                particles.splice(i, 1);
+                continue;
+            }
+
+            ctx.globalAlpha = p.life;
+            ctx.fillStyle = "#ffffff";
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = "#ffffff";
+
+            ctx.fillRect(p.x, p.y, p.size, p.size);
+        }
+
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
+
+        requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+})();
   const flagText = "th1s_1s_ju5t_a_templ4te";
   const el = document.getElementById('typed-out');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
